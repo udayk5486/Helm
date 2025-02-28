@@ -1,0 +1,20 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: my-deploy
+spec:
+   replicas: 2
+   selector:
+      matchLabels:
+        app: uday
+   template:
+      metadata:
+         labels:
+            app: uday
+      spec:
+         containers:
+            - name: cont1
+              image: shaikmustafa/dm
+              ports:
+                - containerPort: 80
